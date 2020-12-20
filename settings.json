@@ -1,0 +1,9 @@
+{"ip":"127.0.0.1",
+  "port":7497,
+  "secType":"STK",
+  "currency":"USD",
+  "exchange":"SMART",
+  "primeExchange":"ISLAND",
+  "accountId":"DU2286498",
+  "defaultSymbol": "AAPL",
+  "deltaStop" : 0.2}

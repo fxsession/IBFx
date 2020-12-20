@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="btnCancelAll" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#onCancelAll" prefHeight="731.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.IBFxController">
+   <children>
+      <MenuBar prefHeight="32.0" prefWidth="900.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Connection">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onConnect" text="Connect" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDisconnect" text="Disconnect" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar layoutY="24.0" prefHeight="36.0" prefWidth="900.0">
+         <items>
+            <Label text="Status:" />
+            <Label fx:id="labConnectionStatus" prefHeight="17.0" prefWidth="152.0" text="disconnected" textFill="#dd0a0a" />
+            <Label fx:id="labInfo" prefHeight="17.0" prefWidth="480.0" text="Settings" textFill="#949292" />
+         </items>
+      </ToolBar>
+      <Label layoutX="17.0" layoutY="121.0" text="Quantity" />
+      <Label layoutX="17.0" layoutY="164.0" text="Price" />
+      <Label layoutX="16.0" layoutY="78.0" text="Instrument" />
+      <TextField fx:id="fldInst" layoutX="95.0" layoutY="74.0" promptText="AAPL" />
+      <TextField fx:id="fldQuant" layoutX="95.0" layoutY="117.0" promptText="100" />
+      <TextField fx:id="fldPrice" layoutX="95.0" layoutY="160.0" promptText="0.0" />
+      <TextField fx:id="fldDeltaStop" layoutX="95.0" layoutY="202.0" promptText="0" />
+      <Label layoutX="16.0" layoutY="207.0" text="DeltaStop" />
+      <Button fx:id="btnSellStpSL" layoutX="573.0" layoutY="75.0" mnemonicParsing="false" onAction="#onSellStpSL" prefHeight="31.0" prefWidth="136.0" text=" Stop SELL @SL" textFill="#eb1717" />
+      <Button fx:id="btnBuyStpSL" layoutX="432.0" layoutY="75.0" mnemonicParsing="false" onAction="#onBuyStpSL" prefHeight="31.0" prefWidth="130.0" text="Stop BUY @SL" textFill="#0eb216" />
+      <Button fx:id="btnCancelAll" layoutX="423.0" layoutY="202.0" mnemonicParsing="false" onAction="#onCancelAll" prefHeight="31.0" prefWidth="279.0" text="Cancel All" textFill="#391aeb" />
+      <Label layoutX="16.0" layoutY="254.0" text="Current orders:" />
+      <Button fx:id="btnChng" layoutX="285.0" layoutY="116.0" mnemonicParsing="false" onAction="#onUpdateQuant" prefHeight="31.0" prefWidth="93.0" text="update" />
+      <TextField fx:id="fldOrderID" layoutX="285.0" layoutY="75.0" prefHeight="21.0" prefWidth="93.0" promptText="Order ID" />
+      <Button fx:id="btnChng1" layoutX="285.0" layoutY="159.0" mnemonicParsing="false" onAction="#onUpdatePrice" prefHeight="31.0" prefWidth="93.0" text="update" />
+      <Button fx:id="btnSellLimit" layoutX="572.0" layoutY="127.0" mnemonicParsing="false" onAction="#onSellLimit" prefHeight="31.0" prefWidth="136.0" text=" Limit SELL" textFill="#eb1717" />
+      <Button fx:id="btnBuyLimit" layoutX="431.0" layoutY="127.0" mnemonicParsing="false" onAction="#onBuyLimit" prefHeight="31.0" prefWidth="130.0" text="Limit BUY" textFill="#0eb216" />
+      <TextArea fx:id="fldOperStat" editable="false" layoutX="16.0" layoutY="496.0" prefHeight="227.0" prefWidth="686.0" />
+      <Label layoutX="15.0" layoutY="475.0" text="Messages:" />
+      <Button fx:id="btnReqOrders" layoutX="122.0" layoutY="249.0" mnemonicParsing="false" onAction="#onUpdateReqOrders" prefHeight="31.0" prefWidth="93.0" text="update" />
+      <TableView fx:id="tblOrders" layoutX="15.0" layoutY="283.0" prefHeight="183.0" prefWidth="686.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="colSymbol" prefWidth="75.0" text="Symbol" />
+            <TableColumn fx:id="colType" prefWidth="77.0" text="Type" />
+            <TableColumn fx:id="colOperation" prefWidth="75.0" text="Action" />
+            <TableColumn fx:id="colAuxPrice" prefWidth="112.0" text="AuxPrice" />
+            <TableColumn fx:id="colLmtPrice" prefWidth="75.0" text="LmtPrice" />
+            <TableColumn fx:id="colVolume" minWidth="0.0" prefWidth="116.0" text="Volume" />
+            <TableColumn fx:id="colStatus" prefWidth="93.0" text="Status" />
+         </columns>
+      </TableView>
+   </children>
+</Pane>
